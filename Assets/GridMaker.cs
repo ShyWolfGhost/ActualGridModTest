@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class GridMaker : MonoBehaviour
 {
-    public const int WIDTH = 5;
-    public const int HEIGHT = 7;
+    public const int WIDTH = 8;
+    public const int HEIGHT = 4;
     
     public int PlayerX;
     public int PlayerY;
@@ -117,7 +117,7 @@ public class GridMaker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score.text = "Score: " + scoreInt.ToString();
+        score.text = "Score:\n" + scoreInt.ToString();
         //score text
         if (sideLerp < 0 && !Repopulate() && HasMatch() == true)
         {
@@ -164,6 +164,7 @@ public class GridMaker : MonoBehaviour
                     Debug.Log(tilesObj[x+2,y]);
                     if (x<WIDTH-2 && tilescript.ismatch(tilesObj[x+1,y], tilesObj[x+2,y]))
                     {
+                        playerScript.mvmnt = 10;
                         return tilescript;
                     }
                     if (y<HEIGHT-2 && tilescript.ismatch(tilesObj[x,y+1], tilesObj[x,y+2]))
@@ -171,7 +172,7 @@ public class GridMaker : MonoBehaviour
                         /*
                         c
                         */
-                        playerScript.mvmnt = 6;
+                        playerScript.mvmnt = 10;
                         //par.DoEmit();
                         return tilescript;
                         //Debug.Log("MVMNT Aft a match: " +playerScript.mvmnt.ToString());
