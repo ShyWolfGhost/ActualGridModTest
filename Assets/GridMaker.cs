@@ -34,12 +34,21 @@ public class GridMaker : MonoBehaviour
     
     public Text score;
     public int scoreInt;
+    public AudioSource Audio;
+    public AudioClip Royalty;
     
     
 
    
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        //Audio.Play(Royalty);
+    }
+
+    
+   
     void Start()
     {
         //ParticleSystem.isPlaying = false;
