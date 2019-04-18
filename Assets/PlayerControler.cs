@@ -48,11 +48,15 @@ public class PlayerControler : MonoBehaviour
         mvmnt = 10;
         movement.text = mvmnt.ToString();
         //scoreInt = 0
-        //Up.onClick.AddListener(delegate {Pressed(0,-1, "Button up"); });
-        //Down.onClick.AddListener(delegate {Pressed(0,1, "Button Down"); });
-        //Left.onClick.AddListener(delegate {Pressed(1,0, "Button Left"); });
-        //Right.onClick.AddListener(delegate {Pressed(-1,0, "Button Right"); });
-    
+        Up = GameObject.Find("ButtonUP").GetComponent<Button>();
+        Up.onClick.AddListener(delegate {Pressed(0,-1, "Button UP"); });
+        Down = GameObject.Find("ButtonDOWN").GetComponent<Button>();
+        Down.onClick.AddListener(delegate {Pressed(0,1, "Button Down"); });
+        Left = GameObject.Find("ButtonLeft").GetComponent<Button>();
+        Left.onClick.AddListener(delegate {Pressed(1,0, "Button Left"); });
+        Right = GameObject.Find("ButtonRight").GetComponent<Button>();
+        Right.onClick.AddListener(delegate {Pressed(-1,0, "Button Right"); });
+
     }
 
     // Update is called once per frame
@@ -62,26 +66,26 @@ public class PlayerControler : MonoBehaviour
         
         if (mvmnt <= 10 && mvmnt > 0)
         {
-            if (Input.GetKeyDown(UpW) || Input.GetKeyDown(UpArr)|| Input.GetButtonDown("Up"))
+            if (Input.GetKeyDown(UpW) || Input.GetKeyDown(UpArr))
             {
                 Debug.Log("UP");
                 Pressed(0, -1, "Key UP");
                 movement.text = mvmnt.ToString();
 
             }
-            else if (Input.GetKeyDown(DownS) || Input.GetKeyDown(DownArr)|| Input.GetButtonDown("Down"))
+            else if (Input.GetKeyDown(DownS) || Input.GetKeyDown(DownArr))
             {
                 Debug.Log("Down");
                 Pressed(0, 1, "Key Down");
                 movement.text = mvmnt.ToString();
             }
-            else if (Input.GetKeyDown(LeftA) || Input.GetKeyDown(LeftArr)|| Input.GetButtonDown("Left"))
+            else if (Input.GetKeyDown(LeftA) || Input.GetKeyDown(LeftArr))
             {
                 Debug.Log("Left");
                 Pressed(1, 0, "Key Left");
                 movement.text = mvmnt.ToString();
             }
-            else if (Input.GetKeyDown(RightD) || Input.GetKeyDown(RightArr)|| Input.GetButtonDown("Right"))
+            else if (Input.GetKeyDown(RightD) || Input.GetKeyDown(RightArr))
             {
                 Debug.Log("Right");
                 Pressed(-1, 0, "Key Right");
