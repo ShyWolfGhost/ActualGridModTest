@@ -62,26 +62,26 @@ public class PlayerControler : MonoBehaviour
         
         if (mvmnt <= 10 && mvmnt > 0)
         {
-            if (Input.GetKeyDown(UpW) || Input.GetKeyDown(UpArr)|| Input.GetButtonDown(Up))
+            if (Input.GetKeyDown(UpW) || Input.GetKeyDown(UpArr)|| Input.GetButtonDown("Up"))
             {
                 Debug.Log("UP");
                 Pressed(0, -1, "Key UP");
                 movement.text = mvmnt.ToString();
 
             }
-            else if (Input.GetKeyDown(DownS) || Input.GetKeyDown(DownArr)|| Input.GetButtonDown(Down))
+            else if (Input.GetKeyDown(DownS) || Input.GetKeyDown(DownArr)|| Input.GetButtonDown("Down"))
             {
                 Debug.Log("Down");
                 Pressed(0, 1, "Key Down");
                 movement.text = mvmnt.ToString();
             }
-            else if (Input.GetKeyDown(LeftA) || Input.GetKeyDown(LeftArr)|| Input.GetButtonDown(Left))
+            else if (Input.GetKeyDown(LeftA) || Input.GetKeyDown(LeftArr)|| Input.GetButtonDown("Left"))
             {
                 Debug.Log("Left");
                 Pressed(1, 0, "Key Left");
                 movement.text = mvmnt.ToString();
             }
-            else if (Input.GetKeyDown(RightD) || Input.GetKeyDown(RightArr)|| Input.GetButtonDown(Right))
+            else if (Input.GetKeyDown(RightD) || Input.GetKeyDown(RightArr)|| Input.GetButtonDown("Right"))
             {
                 Debug.Log("Right");
                 Pressed(-1, 0, "Key Right");
